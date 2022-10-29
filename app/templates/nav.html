@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-sm">
+  <div>
+    <p>
+      <a class="nav-link active link-warning" aria-current="page" href="/">Home</a>
+    </p>
+  </div>
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        {% if current_user.is_authenticated %}
+        <li class="nav-item">
+          <p class="nav-link link-warning">Welcome, {{ (current_user.firstname).title() }}!</p>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-warning" href="/future">Future Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-warning" href="{{ url_for('auth.viewProfile', username=current_user.username) }}">View Your Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-warning" href="/logout">Log Out</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link link-warning" href="/signup">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-warning" href="/login">Login</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+  <div>
+    <p>
+      <a class="nav-link no-decor active hid-backward-text" aria-current="page" href="/hide_em_all">&#x258;moH</a>
+    </p>
+  </div>
+</nav>

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="row text-center">
+        <h1>Your Information!!!</h1>
+    </div>
+
+    {% if email_error %}
+
+    <div class="row text-center">
+        <h1>{{ email_error }}</h1>
+    </div>
+
+    {% endif %}
+
+    <div class="container" style="max-width: 44rem;">
+        <div class="card mx-auto profile-style">
+            <div class="card-body text-dark">
+                <form method="POST">
+                    <div class="row">
+                        <img src="{{ url_for('static', filename='images/default.png') }}" class="image1" alt="">
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-4 mx-auto text-right">
+                            <h2>First Name:</h2>
+                        </div>
+                        <div class="col mx-auto">
+                            <h2>{{ profile.firstname.title() }}</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-4 mx-auto text-right">
+                            <h2>Last Name:</h2>
+                        </div>
+                        <div class="col mx-auto">
+                            <h2>{{ profile.lastname.title() }}</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-4 mx-auto text-right">
+                            <h2>Username:</h2>
+                        </div>
+                        <div class="col mx-auto">
+                            <h2>{{ profile.username }}</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-4 mx-auto text-right">
+                            <h2>Email:</h2>
+                        </div>
+                        <div class="col mx-auto">
+                            <h2>{{ profile.email }}</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-4 mx-auto text-right">
+                            <h2>Password:</h2>
+                        </div>
+                        <div class="col mx-auto">
+                            <h2>&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;</h2>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div>
+            <a class='btn btn-primary profile-button' href="{{ url_for('auth.modifyProfile', username=current_user.username) }}">Modify Profile</a>
+        </div>
+    </div>
+
+{% endblock %}

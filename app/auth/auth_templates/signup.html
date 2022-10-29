@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row text-center">
+            <h1>Sign Up Now!!!</h1>
+        </div>
+        
+        <div class="row">
+            <form method="POST">
+                <div class="col-md-6 mx-auto w-25">
+                    {{ form.hidden_tag() }}
+                    
+                    {{ form.firstname(class='form-control mb-2', placeholder='First Name') }}
+                    {{ form.lastname(class='form-control mb-2', placeholder='Last Name') }}
+                    {{ form.username(class='form-control mb-2', placeholder='Username') }}
+                    {{ form.email(class='form-control mb-2', placeholder='Email') }}
+                    {{ form.password(class='form-control mb-2', placeholder='Password') }}
+                    {{ form.confirm_password(class='form-control mb-2', placeholder='Confirm Password') }}
+                    {{ form.submit(class='btn btn-primary') }}
+                </div>
+            </form>
+        </div>
+        <!-- <div>
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{# {{ random_pokemon }} #}.png">
+        </div> -->
+    </div>
+
+{% endblock %}

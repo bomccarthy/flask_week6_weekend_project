@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="row text-center">
+        <h1>Modify Your Information!!!</h1>
+    </div>
+    <div class="container" style="max-width: 44rem;">
+        <form method="POST">
+            <div class="card mx-auto profile-style">
+                <div class="card-body text-dark">
+                    {{ form.hidden_tag() }}
+                    <div class="row">
+                        <img src="{{ url_for('static', filename='images/default.png') }}" class="image1" alt="">
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-4 mx-auto text-right">
+                            <h2>First Name:</h2>
+                        </div>
+                        <div class="col mx-auto">
+                            <h2>{{ form.firstname(class='form-control mb-2', value=profile.firstname) }}</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-4 mx-auto text-right">
+                            <h2>Last Name:</h2>
+                        </div>
+                        <div class="col mx-auto">
+                            <h2>{{ form.lastname(class='form-control mb-2', value=profile.lastname) }}</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-4 mx-auto text-right">
+                            <h2>Username:</h2>
+                        </div>
+                        <div class="col mx-auto">
+                            <h2>{{ form.username(class='form-control mb-2', value=profile.username) }}</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-4 mx-auto text-right">
+                            <h2>Email:</h2>
+                        </div>
+                        <div class="col mx-auto">
+                            <h2>{{ form.email(class='form-control mb-2', value=profile.email) }}</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-4 mx-auto text-right">
+                            <h2>Password:</h2>
+                        </div>
+                        <div class="col mx-auto">
+                            <h2>{{ form.password(class='form-control mb-2', placeholder='Password') }}</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-4 mx-auto text-right">
+                            <h2>Confirm PW:</h2>
+                        </div>
+                        <div class="col mx-auto">
+                            <h2>{{ form.confirm_password(class='form-control mb-2', placeholder='Confirm Password') }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                {{ form.submit(class='btn btn-success profile-button', value='Modify') }}
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
