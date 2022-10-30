@@ -10,8 +10,8 @@ app = Flask(__name__)
 login = LoginManager()
 
 @login.user_loader
-def load_user(user_id):
-    return Customer.query.get(user_id)
+def load_user(cust_id):
+    return Customer.query.get(cust_id)
 
 app.config.from_object(Config)
 
@@ -24,5 +24,5 @@ db.init_app(app)
 migrate = Migrate(app, db)
 login.init_app(app)
 
-# from . import routes
-# from . import models
+from . import routes
+from . import models
