@@ -1,10 +1,10 @@
-from app import app
 from flask import render_template, request, redirect, url_for
+from app import apps
 
 
 from app.models import Customer
 import app.prodFunc
 
-@app.route('/', methods=["GET", "POST"])
-def index():
+@apps.route('/')
+def homepage():
     return render_template('index.html')
