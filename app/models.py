@@ -65,4 +65,3 @@ class Cart(db.Model):
     def __init__(self, cust_id, prod_id):
         self.cust_id = cust_id
         self.prod_id = prod_id
-        # self.date_created = date_created
