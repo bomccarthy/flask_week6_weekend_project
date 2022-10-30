@@ -1,6 +1,7 @@
 from xml.sax.handler import all_properties
 import requests as req
 
+
 def getProd(id):
     url = f'https://fakestoreapi.com/products/{id}'
     resp = req.get(url)                 # requested URL for product by number
@@ -24,7 +25,7 @@ def getAllProdByID():
     dict = r.json()
     allProdDictByID = {}
     for id in dict:
-        allProdDictByID[id['id']] = id['title']
+        allProdDictByID[id['id']] = id['title'], id['image'], id['price']
     return allProdDictByID
 
 def getAllProdByCat():

@@ -8,7 +8,6 @@
 body{
     background-image: linear-gradient(rgba(21, 6, 231, 0.932),rgba(1, 236, 40, 0.911));;
     background-repeat:no-repeat;
-    height: 700px;
     margin: 0%;
     padding: 0%;
 }
@@ -18,7 +17,7 @@ body{
     width: 200px;
     height: 100px;
     font-family:Arial, Helvetica, sans-serif;
-    font-size: x-large;
+    font-size: 20rem;
 }
 
 nav li{
@@ -29,6 +28,7 @@ nav li{
 nav a{
     color:rgb(12, 10, 10);
     text-decoration: none;
+    font-size: 1rem;
 }
 
 .info-person{
@@ -71,3 +71,10 @@ nav a{
     bottom: -200px;
     position: relative;
 }
+
+.card-style {
+    width: auto;
+    height: 24rem;
+    border-width: 0.3rem;
+  }
+  
