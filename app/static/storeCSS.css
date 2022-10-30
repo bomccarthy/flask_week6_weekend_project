@@ -25,6 +25,7 @@ nav a{
 }
 body{
     background-image:linear-gradient(rgba(21, 6, 231, 0.932),rgba(1, 236, 40, 0.911));
+    background-size: auto;
     background-repeat:no-repeat;
     margin: 0%;
     padding: 0%;
