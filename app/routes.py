@@ -3,8 +3,11 @@ from app import apps
 
 
 from app.models import Customer
-import app.prodFunc
+from app.prodFunc import getAllProdByID
 
 @apps.route('/')
 def homepage():
-    return render_template('index.html')
+    product = getAllProdByID()
+
+    return render_template('index.html', product=product)
+

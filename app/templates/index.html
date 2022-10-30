@@ -1,41 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <div class="container w-80">
+        <div class="d-flex justify-content-center " style=" flex-wrap:wrap">
+        {% for num, prod in product.items() %}
+        <a href="#">
+        <div class="card card-style m-2" style="width: 18rem; display: flex;">
+            <div style="display:flex; justify-content: center;">
+            <img src="{{ prod[1] }}" class="card-img-top" style="height:10rem; width: 10rem;"  alt="picture of {{ prod[0] }}">
+            </div>
+        </a>
+            <div class="card-body">
+                <h5 class="card-title">{{ prod[0] }}</h5>
+                <h6>Price: ${{ prod[2] }}</h6>
+            </div>
+        </div>
 
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
+        {% endfor %}
         </div>
     </div>
-    <div class="item2">
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="item3">
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-
 {% endblock %}
