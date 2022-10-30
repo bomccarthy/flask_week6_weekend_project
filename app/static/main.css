@@ -1,0 +1,73 @@
+.login{
+    border: 1000px;
+    background-color: beige;
+    box-sizing: 40px;
+    padding: 25px;
+}
+
+body{
+    background-image: linear-gradient(rgba(21, 6, 231, 0.932),rgba(1, 236, 40, 0.911));;
+    background-repeat:no-repeat;
+    height: 700px;
+    margin: 0%;
+    padding: 0%;
+}
+
+.main-site{
+    text-align: center;
+    width: 200px;
+    height: 100px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: x-large;
+}
+
+nav li{
+    display: inline;
+    margin: 20px
+}
+
+nav a{
+    color:rgb(12, 10, 10);
+    text-decoration: none;
+}
+
+.info-person{
+    left: 1000px;
+    position: relative;
+    top: -160px;
+    display: inline;
+}
+
+.main-site{
+    position: relative;
+    width: 200px;
+    height: 100px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    top: 20px;
+    
+}
+
+.cart{
+    right: -440px;
+    position: relative;
+
+    top: -160px; 
+    font-size: larger;
+}
+
+.search{
+    right: -350px;
+    position: relative;
+    height: 70px;
+    top: -100px; 
+    
+}
+.item2{
+    bottom: -100px;
+    position: relative;
+}
+.item3{
+    bottom: -200px;
+    position: relative;
+}
