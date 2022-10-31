@@ -12,15 +12,9 @@ def showProduct(product_id):
 
 @shop.route('/cart')
 def showCart():
-    # viewCart = Product.query.with_entities(current_user.cust_id).distinct()
-    # print(len(viewCart.all()))
-    viewCart = Product.query.join(cartTable).join(Customer).filter(cartTable.c.cust_id == current_user.cust_id)
-    # count_of_all_products = viewCart.count()
-    # print(viewCart)
-    # sum_of_all_products = viewCart.sum(product_price)
-    # print(count_of_all_products)
-    # print(sum_of_all_products)
-    # count_of_product = Product.query.join(cartTable).join(Customer).get()
+    print(current_user.cust_id)
+    print(cartTable.c.cust_id)
+    viewCart = Product.query.join(cartTable).join(Customer).filter(cartTable.c.cust_id == current_user.id)
     return render_template('cart.html', viewCart=viewCart)
 
 @shop.route('/add/<int:product_id>')
