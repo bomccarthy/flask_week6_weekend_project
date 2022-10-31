@@ -17,11 +17,15 @@ def loginPage():
             user = Customer.query.filter_by(username=username).first()
             if user:
                 if check_password_hash(user.password, password):
+                    print('1')
                     login_user(user)
-                    return redirect(url_for('index'))
+                    print('2')
+                    return redirect(url_for('homepage'))
                 else:
+                    print('3')
                     flash('That is not your password!!!', 'warning')
             else:
+                print('4')
                 flash('This user does not exist. Please try again...', 'warning')
     return render_template('login.html', form=form)
 

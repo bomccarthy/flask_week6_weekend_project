@@ -8,6 +8,4 @@ from app.prodFunc import getAllProdByID
 @apps.route('/')
 def homepage():
     product = getAllProdByID()
-
     return render_template('index.html', product=product)
-
