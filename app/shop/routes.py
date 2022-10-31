@@ -20,9 +20,24 @@ def showCart():
 
 @shop.route('/add/<int:product_id>')
 def addProduct(product_id):
-    product = getProd(product_id)
-    
-    current_user.addToCart(product_id)
+    if Product.query.get(product_id):
 
-    return redirect(url_for('showCart'))
+        product = Product.query.get(product_id)
+    
+        current_user.addToCart(product)
+
+    else:
+        product = getProd(product_id)
+        name = product['title']
+        description = product['description']
+        price = product['price']
+
+        new_product = Product(name, description, price)
+
+        new_product.saveToDB()
+
+
+        current_user.addToCart(new_product)
+
+    return redirect(url_for('shop.showCart'))
 
