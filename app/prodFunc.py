@@ -25,7 +25,7 @@ def getAllProdByID():
     dict = r.json()
     allProdDictByID = {}
     for id in dict:
-        allProdDictByID[id['id']] = id['title'], id['image'], id['price']
+        allProdDictByID[id['id']] = id['title'], id['image'], id['price'], id['description'], id['rating']['rate'], id['rating']['count']
     return allProdDictByID
 
 def getAllProdByCat():

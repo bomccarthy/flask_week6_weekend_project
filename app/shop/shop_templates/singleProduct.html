@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container d-flex justify-content-center mt-4">
+    <div class="card mb-3" style="max-width: 700px;">
+        <div class="row g-0">
+            <div class="col-md-4 d-flex align-items-center justify-content-center">
+                <img src="{{ singleProduct.image }}" class="img-fluid rounded-start" style="height:10rem; width: 10rem;"
+                    alt="picture of {{ singleProduct.title }}">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ singleProduct.title }}</h5>
+                    <h5 class="card-title">${{ singleProduct.price }}</h5>
+                    <p class="card-text">{{ singleProduct.description }}</p>
+                    <p class="card-text"><small class="text-muted">Rating: {{ singleProduct.rating }} stars || {{
+                            singleProduct.count }}</small></p>
+                    <p class="card-text"><small class="text-muted">Category: {{ singleProduct.category.title()
+                            }}</small></p>
+                    <a href="/product/{{ singleProduct.id }}"><button class="btn btn-outline-primary btn-sm mt-2 w-50" type="button">
+                            Add to Cart
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

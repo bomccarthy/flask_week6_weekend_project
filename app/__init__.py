@@ -4,7 +4,8 @@ from flask_migrate import Migrate
 from .models import db, Customer, Product
 from flask_login import LoginManager, login_manager
 
-from .auth.routes import auth
+from app.auth.routes import auth
+from app.shop.routes import shop
 
 apps = Flask(__name__)
 login = LoginManager()
@@ -17,7 +18,7 @@ apps.config.from_object(Config)
 
 # registering your blueprint
 apps.register_blueprint(auth)
-# app.register_blueprint()
+apps.register_blueprint(shop)
 
 # initialize our database to work with our app
 db.init_app(apps)
