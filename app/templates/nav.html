@@ -8,10 +8,11 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-5 nav-fill w-100">
                 {% if current_user.is_authenticated %}
-                    <a class="nav-link" href="/logout">Logout</a>
-                </li>
                 <li class="nav-item">
-                    <p class="nav-link">Hello, {{ current_user.first_name.upper() }}</p>
+                    <p class="nav-link">Hello, {{ current_user.firstname.upper() }}</p>
+                </li>
+                <li>
+                    <a class="nav-link" href="/logout">Logout</a>
                 </li>
                 {% else %}
                 <div class="search">

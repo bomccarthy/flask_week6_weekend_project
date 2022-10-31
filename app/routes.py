@@ -21,5 +21,3 @@ def homepage():
 
     return render_template('index.html', product=product)
 
-
-

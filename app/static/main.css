@@ -1,15 +1,22 @@
 .login{
-    border: 1000px;
-    background-color: beige;
-    box-sizing: 40px;
-    padding: 25px;
+    border-radius: 5rem;
+    background-color: rgba(245, 245, 220, 0.5);
+    margin: 0 auto;
+    padding: 5rem;
+}
+
+.center {
+    display: block;
+    margin: auto;
+    width: 75%;
+    padding: 2rem;
 }
 
 body{
-    background-image: linear-gradient(rgba(21, 6, 231, 0.932),rgba(1, 236, 40, 0.911));;
-    background-repeat:no-repeat;
-    margin: 0%;
-    padding: 0%;
+    background: no-repeat center center fixed;
+    background-size: cover;
+    background-image: linear-gradient(rgba(21, 6, 231, 0.932),rgba(1, 236, 40, 0.911));
+    background-repeat: no-repeat;
 }
 
 .main-site{
