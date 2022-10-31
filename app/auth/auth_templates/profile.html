@@ -2,10 +2,6 @@
 
 {% block content %}
 
-    <div class="row text-center">
-        <h1>Your Information!!!</h1>
-    </div>
-
     {% if email_error %}
 
     <div class="row text-center">
@@ -14,13 +10,10 @@
 
     {% endif %}
 
-    <div class="container" style="max-width: 44rem;">
-        <div class="card mx-auto profile-style">
-            <div class="card-body text-dark">
+    <div class="container mt-5" style="max-width: 50%;">
+        <div class="card mx-auto login">
+            <div class="card-body text-light">
                 <form method="POST">
-                    <div class="row">
-                        <img src="{{ url_for('static', filename='images/default.png') }}" class="image1" alt="">
-                    </div>
                     <div class="row">
                         <div class="col col-lg-4 mx-auto text-right">
                             <h2>First Name:</h2>
@@ -60,12 +53,12 @@
                         <div class="col mx-auto">
                             <h2>&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;</h2>
                         </div>
+                        <div>
+                            <a class='btn btn-primary profile-button' href="{{ url_for('auth.modifyProfile', username=current_user.username) }}">Modify Profile</a>
+                        </div>
                     </div>
                 </form>
             </div>
-        </div>
-        <div>
-            <a class='btn btn-primary profile-button' href="{{ url_for('auth.modifyProfile', username=current_user.username) }}">Modify Profile</a>
         </div>
     </div>
 

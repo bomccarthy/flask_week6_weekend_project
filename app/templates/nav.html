@@ -9,10 +9,13 @@
             <ul class="navbar-nav mx-5 nav-fill w-100">
                 {% if current_user.is_authenticated %}
                 <li class="nav-item">
-                    <p class="nav-link">Hello, {{ current_user.firstname.upper() }}</p>
+                    <p class="nav-link">Hello, {{ current_user.firstname.title() }}, what can I get for you today?</p>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/cart">Cart</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('auth.viewProfile', username=current_user.username) }}">View Your Profile</a>
                 </li>
                 <li>
                     <a class="nav-link" href="/logout">Logout</a>
