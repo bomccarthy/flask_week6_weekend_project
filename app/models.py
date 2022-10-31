@@ -55,19 +55,31 @@ class Customer(db.Model, UserMixin):
 class Product(db.Model):
     prod_id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150), nullable=False)
-    description = db.Column(db.String(2500), nullable=False)
     price = db.Column(db.Integer, nullable=False)
+    description = db.Column(db.String(2500), nullable=False)
+    category = db.Column(db.String(150), nullable=False)
+    image = db.Column(db.String(250), nullable=False)
+    rating = db.Column(db.Float, nullable=False)
+    ratings_count = db.Column(db.Integer, nullable=False)
     date_created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow())
 
-    def __init__(self, name, description, price):
+    def __init__(self, name, price, description, category, image, rating, ratings_count):
         self.name = name
-        self.description = description
         self.price = price
+        self.description = description
+        self.category = category
+        self.image = image
+        self.rating = rating
+        self.ratings_count = ratings_count
 
-    def modify(self, name, description, price):
+    def modify(self, name, price, description, category, image, rating, ratings_count):
         self.name = name
-        self.description = description
         self.price = price
+        self.description = description
+        self.category = category
+        self.image = image
+        self.rating = rating
+        self.ratings_count = ratings_count
         db.session.commit()
 
     def saveToDB(self):
