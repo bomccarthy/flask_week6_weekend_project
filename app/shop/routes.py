@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, url_for, redirect, flash
 from flask_login import login_user, logout_user, current_user
-from app.models import Customer, Product
+from app.models import Customer, Product, cartTable
 from app.prodFunc import getProd
 
 shop = Blueprint('shop', __name__, template_folder='shop_templates')
@@ -14,9 +14,11 @@ def showProduct(product_id):
 
 @shop.route('/cart')
 def showCart():
-    
+    viewCart = Product.query.join(cartTable).join(Customer).filter(cartTable.c.cust_id == current_user.cust_id).all()
+    count_of_product = Product.query.join(cartTable).join(Customer).filter(cartTable.c.cust_id == current_user.cust_id).count()
+    print(count_of_product)
 
-    return render_template('cart.html')
+    return render_template('cart.html', viewCart=viewCart)
 
 @shop.route('/add/<int:product_id>')
 def addProduct(product_id):
