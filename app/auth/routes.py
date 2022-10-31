@@ -23,10 +23,10 @@ def loginPage():
                     return redirect(url_for('homepage'))
                 else:
                     print('3')
-                    flash('That is not your password!!!', 'warning')
+                    flash('That is not your password!!!', 'danger')
             else:
                 print('4')
-                flash('This user does not exist. Please try again...', 'warning')
+                flash('This user does not exist. Please try again...', 'danger')
     return render_template('login.html', form=form)
 
 @auth.route('/signup', methods=["GET", "POST"])
@@ -42,17 +42,17 @@ def signupPage():
             uq_un = Customer.query.filter_by(username=username).first()
             uq_em = Customer.query.filter_by(email=email).first()
             if uq_un and uq_em:
-                flash('That username AND email belong to an account.', 'warning')
+                flash('That username AND email belong to an account.', 'danger')
             elif uq_un:
-                flash('That username already belongs to an account.', 'warning')
+                flash('That username already belongs to an account.', 'danger')
             elif uq_em:
-                flash('That email already belongs to an account.', 'warning')
+                flash('That email already belongs to an account.', 'danger')
             else:
                 user = Customer(firstname, lastname, username, email, password)
                 try:
                     email = validate_email(email)
                 except:
-                    flash('That is not a valid email address.', 'warning')
+                    flash('That is not a valid email address.', 'danger')
                     return render_template('signup.html', form=form)
                 user.saveToDB()
                 flash('User Created Successfully!', 'success')
@@ -62,7 +62,7 @@ def signupPage():
 @auth.route('/logout')
 def logout():
     logout_user()
-    flash('Logout Successful.')
+    flash('Logout Successful.', 'danger')
     return redirect(url_for('auth.loginPage'))
 
 @auth.route('/profile/<username>')
